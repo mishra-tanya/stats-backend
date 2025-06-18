@@ -13,13 +13,7 @@ class MagazinesController extends Controller
     // get all magazines with download counts
     public function getMagazines()
     {
-        try {
-            $magazines = Magazines::all();
-            return apiSuccess($magazines, 'Magazines fetched successfully');
-
-        } catch (\Exception $e) {
-            return apiError('Failed to fetch Magazines', 500);
-        }
+        return $this->fetchAll(Magazines::class, 'Magazines fetched successfully');
     }
     
 }

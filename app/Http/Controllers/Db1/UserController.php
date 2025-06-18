@@ -15,24 +15,13 @@ class UserController extends Controller
     // users from login
     public function login()
     {
-        try {
-            $users = User::all();
-            return apiSuccess($users, 'Users fetched successfully');
-
-        } catch (\Exception $e) {
-            return apiError('Failed to fetch Users', 500);
-        }
+        return $this->fetchAll(User::class, 'Users fetched successfully');
     }
     
     // users from subscribed
     public function subscribed()
     {
-        try {
-            $users = SubscribedUser::all();
-            return apiSuccess($users, 'Users fetched successfully');
-         
-        } catch (\Exception $e) {
-            return apiError('Failed to fetch Users', 500);
-        }
+        return $this->fetchAll(SubscribedUser::class, 'Users fetched successfully');
     }
+    
 }

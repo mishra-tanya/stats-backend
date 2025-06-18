@@ -13,13 +13,6 @@ class BlogsController extends Controller
     // get all blogs with categories
     public function getBlogs()
     {
-        try {
-            $blogs = BlogPosts::with('category')->get();
-            return apiSuccess($blogs, 'Blogs fetched successfully');
-
-        } catch (\Exception $e) {
-            return apiError('Failed to fetch blogs', 500);
-        }
+        return $this->fetchAll(BlogPosts::class, 'Blogs fetched successfully');
     }
-
 }

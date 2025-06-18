@@ -13,13 +13,7 @@ class CategoriesController extends Controller
     // get all blog categories
     public function getCategories()
     {
-        try {
-            $categories = BlogCategories::all();
-            return apiSuccess($categories, 'Categories fetched successfully');
-
-        } catch (\Exception $e) {
-            return apiError('Failed to fetch Categories', 500);
-        }
+        return $this->fetchAll(BlogCategories::class, 'Categories fetched successfully');
     }
 
 }

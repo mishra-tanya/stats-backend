@@ -6,6 +6,7 @@ use App\Http\Controllers\Db1\BlogsController;
 use App\Http\Controllers\Db1\CategoriesController;
 use App\Http\Controllers\Db1\MagazinesController;
 use App\Http\Controllers\Db1\StatsController;
+use App\Http\Controllers\NotificationController;
 
 Route::prefix('db1')->group(function () {
 
@@ -19,5 +20,8 @@ Route::prefix('db1')->group(function () {
     Route::get('/get-magazines', [MagazinesController::class, 'getMagazines']);
 
     Route::get('/get-stats', [StatsController::class, 'getStats']);
+
+    Route::get('notifications/milestones', [NotificationController::class, 'getMilestoneNotifications']);
+    Route::get('notifications/contacts', [NotificationController::class, 'getContactMessages']);
 
 });
