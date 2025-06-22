@@ -47,5 +47,9 @@ Route::prefix('db2')->group(function () {
     Route::get('/daily-stats', [StatsController::class, 'getDailyStats']);
     Route::get('/weekly-stats', [StatsController::class, 'getWeeklyStats']);
     Route::get('/monthly-stats', [StatsController::class, 'getMonthlyStats']);
+    Route::get('/country-distribution', [StatsController::class, 'countryDistribution']);
+    Route::get('/track-reg', [StatsController::class, 'registrationStats']);
+    Route::get('/lo-stats', [StatsController::class, 'loStats']);
+    Route::get('/scr-stats', [StatsController::class, 'scrStats']);
 
 });
