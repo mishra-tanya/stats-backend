@@ -8,4 +8,9 @@ class Result extends Model
 {
     protected $connection = 'mysql3'; 
     protected $table = 'results';
+    
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'user_id');
+    }
 }
