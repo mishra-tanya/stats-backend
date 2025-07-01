@@ -6,7 +6,7 @@ use App\Http\Controllers\Db4\StatsController;
 use App\Http\Controllers\Db4\EmissionController;
 
 
-Route::prefix('db4')->group(function () {
+Route::middleware(['admin.auth'])->prefix('db4')->group(function () {
     Route::get('/users', [UserController::class, 'getUser']);
 
     Route::get('/get-stats', [StatsController::class, 'getStats']);

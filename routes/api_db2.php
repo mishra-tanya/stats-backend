@@ -16,7 +16,7 @@ use App\Http\Controllers\Db2\SCRQuestionController;
 use App\Http\Controllers\Db2\StatsController;
 use App\Http\Controllers\Db2\TrialRequestController;
 
-Route::prefix('db2')->group(function () {
+Route::middleware(['admin.auth'])->prefix('db2')->group(function () {
 
     Route::get('/users', [UserController::class, 'getUser']);
     Route::get('/users/{id}', [UserController::class, 'getUserById']);

@@ -8,7 +8,7 @@ use App\Http\Controllers\Db3\CertificateController;
 use App\Http\Controllers\Db3\PaymentController;
 use App\Http\Controllers\Db3\ResultsController;
 
-Route::prefix('db3')->group(function () {
+Route::middleware(['admin.auth'])->prefix('db3')->group(function () {
     Route::get('/users', [UserController::class, 'getUser']);
     Route::get('/class-wise', [UserController::class, 'getClassWiseUserData']);
     Route::get('/all-goal-completion', [UserController::class, 'getGoalCompletionStatsByClass']);
