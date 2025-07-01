@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\db4;
+namespace App\Http\Controllers\Db4;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
